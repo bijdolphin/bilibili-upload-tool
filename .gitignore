@@ -188,3 +188,11 @@ cookiesFile
 uploadFile
 videoFile
 
+# Our test files
+videos/*.mp4
+videos/*.webm
+cover.jpg
+biliup_config.json
+*SESSDATA*
+*bili_jct*
+
