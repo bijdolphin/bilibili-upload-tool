@@ -1,15 +1,23 @@
-# Bilibili Upload Tool - Working Version
+# YouTube to Bilibili Tool v2.0
 
-A simplified and working tool for uploading videos from YouTube to Bilibili using the modern bilibili-api-python library.
+A complete web-based tool for downloading YouTube videos and uploading them to Bilibili with a clean, separated workflow.
 
-## Successfully Tested Features
+## v2.0 Features
 
-- ✅ Download YouTube videos using yt-dlp
-- ✅ Automatic cover image generation with PIL
-- ✅ Cookie-based authentication with Playwright
-- ✅ Upload to Bilibili with Chinese metadata
-- ✅ Progress tracking during upload
-- ✅ Support for reposted content with source attribution
+- 🌐 **Clean Web Interface** - Modern, user-friendly design
+- ⬇️ **Step 1: Download** - Download YouTube videos locally
+- ⬆️ **Step 2: Upload** - Upload videos to Bilibili
+- 📚 **Video Library** - Manage your downloaded videos
+- 📊 **Statistics** - Track downloads and uploads
+- 🎨 **Auto Cover Generation** - Automatic cover image creation
+- 📱 **Responsive Design** - Works on all devices
+
+## Successfully Tested
+
+- ✅ Complete workflow tested and working
+- ✅ Downloaded and uploaded "Me at the zoo" (first YouTube video)
+- ✅ Works with various network configurations
+- ✅ Clean, separated workflow for better organization
 
 ## Quick Start
 
@@ -43,22 +51,32 @@ python get_bilibili_cookie_playwright.py
 
 Update the extracted cookies in `bilibili_upload_final_working.py`.
 
-### 3. Download and Upload
+### 3. Run the Web Application
 
 ```bash
-# Download YouTube video
-yt-dlp -o "videos/%(title)s.%(ext)s" https://www.youtube.com/watch?v=VIDEO_ID
-
-# Upload to Bilibili
-python bilibili_upload_final_working.py videos/your_video.mp4
+# Start the web server
+python clean_app.py
 ```
 
-## Working Files
+Then open http://localhost:3000 in your browser.
 
-- **`bilibili_upload_final_working.py`** - Main upload script (WORKING VERSION)
-- **`minimal_upload.py`** - Minimal working example for testing
+### 4. Use the Interface
+
+1. **Step 1**: Enter a YouTube URL and click "Download Video"
+2. **Step 2**: Select a downloaded video and click "Upload to Bilibili"
+3. **Monitor**: View your video library and upload statistics
+
+## Key Files (v2.0)
+
+- **`clean_app.py`** - Main web application (v2.0)
+- **`bilibili_upload_final_working.py`** - Command-line upload script
 - **`create_cover.py`** - Generates cover images for videos
 - **`get_bilibili_cookie_playwright.py`** - Cookie extraction tool
+- **`templates/index.html`** - Web interface template
+
+## Legacy Files (v1.0)
+
+- **`minimal_upload.py`** - Minimal working example for testing
 - **`open_bilibili_for_login.py`** - Browser automation for login
 - **`test_bilibili_simple.py`** - Test authentication
 
